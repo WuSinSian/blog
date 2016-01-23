@@ -12,7 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //throw new Exception("ths is work");
+      return "welcome";
+    //return view('welcome');
+});
+
+Route::get('hello/{name?}',function($name ='who are you'){
+
+	return 'hello  '.$name;
+});
+//Route::pattern('id','[0-9]+');
+Route::get('post/{id?}',function($id =0 ){
+
+	return 'ID =   '. $id;
+})
+->where ('id','[0-9]+');
+
+Route::get('cool', function(){
+	return 'cool';
 });
 
 /*
