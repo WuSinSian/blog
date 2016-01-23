@@ -147,7 +147,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Recca0120\LaravelTracy\ServiceProvider::class,
+        Recca0120\Terminal\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
