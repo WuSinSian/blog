@@ -13,24 +13,37 @@
 
 Route::get('/', function () {
     //throw new Exception("ths is work");
-      return "welcome";
-    //return view('welcome');
+      //return "welcome";
+    return view('welcome');
 });
 
 Route::get('hello/{name?}',function($name ='who are you'){
 
 	return 'hello  '.$name;
 });
+
 //Route::pattern('id','[0-9]+');
-Route::get('post/{id?}',function($id =0 ){
+Route::get('post/{id?}',['as' => 'posts.show', function($id =0 ){
 
 	return 'ID =   '. $id;
-})
+}])
 ->where ('id','[0-9]+');
 
-Route::get('cool', function(){
-	return 'cool';
+Route::get('dashboard',function(){
+		return 'user dashboard';
+	});
+
+Route::group(['prefix' => 'admin'],function(){
+
+	Route::get('dashboard',function(){
+		return 'admin dashboard';
+	});
+	Route::get('account',function(){
+		return 'admin account';
+	});
 });
+
+
 
 /*
 |--------------------------------------------------------------------------
