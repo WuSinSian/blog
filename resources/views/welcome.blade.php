@@ -39,6 +39,8 @@
         <div class="container">
             <div class="content">
                 <div class="title">Laravel 5</div>
+                <a href="http://www.yahoo.com.tw">yahoo</a>
+                <a hre="{{route('posts.show', 9)}}">link</a>
             </div>
         </div>
     </body>
